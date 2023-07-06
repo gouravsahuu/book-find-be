@@ -11,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use("/",bookRoute);
 
+app.get("/",(req,res) => {
+    res.send({"message":"Book Find Backend"});
+})
+
 app.listen(port,async () => {
     try{
         await connection;
